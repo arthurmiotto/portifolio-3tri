@@ -1,0 +1,2 @@
+Nesta atividade que ainda estamos desenvolvendo e evoluindo a cada aula, estamos projetando um aplicativo de musica, como o spotify, Primeiro criamos nosso back-end e depois partimos para o nosso mobile, a cada aula desenvolvendo um pouco mais do nosso codigo com o professor ramon.
+https://github.com/arthurmiotto/fullstack

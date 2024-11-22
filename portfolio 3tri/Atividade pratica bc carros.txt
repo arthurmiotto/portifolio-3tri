@@ -1,0 +1,50 @@
+Nessa atividade tivemos que produzir o banco de dados para identificar qual o modelo de carros, fabricantes, ano de fabricação. Sendo assim desenvolvi esse código.
+
+CREATE TABLE Fabricante (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    pais_origem VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Carro (
+    id SERIAL PRIMARY KEY,
+    modelo VARCHAR(100) NOT NULL,
+    ano_fabricacao INT NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    id_fabricante INT REFERENCES Fabricante(id)
+);
+
+INSERT INTO Fabricante (nome, pais_origem) VALUES 
+('Fabricante A', 'Brasil'),
+('Fabricante B', 'Alemanha'),
+('Fabricante C', 'Japão');
+
+INSERT INTO Carro (modelo, ano_fabricacao, preco, id_fabricante) VALUES 
+('Modelo X', 2021, 95000.00, 1),
+('Modelo Y', 2022, 105000.00, 2),
+('Modelo Z', 2023, 120000.00, 3);
+
+
+SELECT * FROM Carro;
+
+
+SELECT * FROM Carro WHERE ano_fabricacao > 2020;
+
+
+SELECT Carro.modelo, Fabricante.nome AS fabricante
+FROM Carro
+JOIN Fabricante ON Carro.id_fabricante = Fabricante.id;
+
+
+SELECT * FROM Carro WHERE preco > 100000.00;
+
+
+UPDATE Carro
+SET preco = 110000.00
+WHERE id = 1;
+
+
+DELETE FROM Carro
+WHERE id = 2; 
+
+
